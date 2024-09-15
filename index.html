@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Sort Visualizer</title>
+
+    <script src="libraries/p5.js"></script>
+    <script src="libraries/p5.dom.js"></script>
+    <script src="timer_algos.js"></script>
+    <script src="algorithms.js"></script>
+    <script src="sketch.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #3b0ab7; /* Green nav bar */
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        nav ul li {
+            display: inline;
+            padding: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+        }
+
+        .range-input {
+            background-color: #ffffff;
+            border-radius: 10px;
+            width: 150px;
+        }
+
+        input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            background: #ffcc00;
+            outline: none;
+            border-radius: 10px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #13aae1;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4c0deb;
+            cursor: pointer;
+        }
+
+        li a.clickable {
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        li a.clickable:hover {
+            color: #ff6347; /* Tomato color */
+        }
+
+        .slider {
+            margin-left: 10px;
+        }
+
+        #reset {
+            background-color: #f44336; /* Red for reset */
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        #reset:hover {
+            background-color: #ffcc00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#" class="clickable">Algorithms</a>
+                <ul>
+                    <li><a href="#" class="clickable" id="bubbleSort">Bubble Sort</a></li>
+                    <li><a href="#" class="clickable" id="selectionSort">Selection Sort</a></li>
+                    <li><a href="#" class="clickable" id="mergeSort">Merge Sort</a></li>
+                    <li><a href="#" class="clickable" id="quickSort">Quick Sort</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Data size</a>
+                <input
+                    class="range-input"
+                    type="range"
+                    min="30"
+                    max="60"
+                    value="42"
+                    class="slider"
+                    id="data_size"
+                />
+            </li>
+            <li>
+                <a href="#">Speed</a>
+                <input
+                    class="range-input"
+                    type="range"
+                    min="0"
+                    max="40"
+                    value="40"
+                    class="slider"
+                    id="frm"
+                />
+            </li>
+            <li><a href="#" id="time">Time: -- </a></li>
+            <li><a href="#" class="clickable" id="reset">Reset</a></li>
+            <li><a href="https://github.com/Abhishek8208" class="clickable">Source Code</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
